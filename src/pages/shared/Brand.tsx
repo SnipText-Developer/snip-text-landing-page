@@ -1,11 +1,13 @@
+import { Link } from "react-router-dom";
+
 export const Arrow = () => <span aria-hidden="true">↗</span>;
 export const Logo = () => (
-  <a href="#home" className="logo" aria-label="SnipText 홈">
+  <Link to="/" className="logo" aria-label="SnipText 홈">
     <span className="logo-mark">
       s<span>·</span>
     </span>
     sniptext<span className="logo-dot">®</span>
-  </a>
+  </Link>
 );
 export const Chrome = () => (
   <svg

@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { examples } from "./demoExamples";
-import useReveal from "../shared/useReveal";
+import useReveal from "../useReveal";
 
 export default function MailDemo({ expanded, setExpanded }: {
   expanded: boolean;

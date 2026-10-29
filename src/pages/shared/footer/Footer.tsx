@@ -1,4 +1,4 @@
-import { Logo } from "../shared/Brand";
+import { Logo } from "../Brand";
 export default function Footer() {
 
   return (

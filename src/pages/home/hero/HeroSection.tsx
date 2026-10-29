@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import useReveal from "../shared/useReveal";
-import { Arrow, Chrome } from "../shared/Brand";
+import useReveal from "../useReveal";
+import { Arrow, Chrome } from "pages/shared/Brand";
 import MailDemo from "./MailDemo";
 
 export default function HeroSection({ onTryDemo, expanded, setExpanded }: {

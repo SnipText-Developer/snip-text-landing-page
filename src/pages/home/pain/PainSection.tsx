@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import useReveal from "../shared/useReveal";
+import useReveal from "../useReveal";
 
 export default function PainSection() {
   const reveal = useReveal();

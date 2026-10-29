@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import useReveal from "../shared/useReveal";
+import useReveal from "../useReveal";
 
 export default function UseCasesSection() {
   const reveal = useReveal();
@@ -47,7 +47,7 @@ export default function UseCasesSection() {
             role: "일잘러의 일상",
             title: (
               <>
-                매번 찾던 정보,
+                매번 찾던 메일 양식,
                 <br />
                 이제 외우지 마세요.
               </>

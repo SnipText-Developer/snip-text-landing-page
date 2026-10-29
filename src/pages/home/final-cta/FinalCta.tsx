@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import useReveal from "../shared/useReveal";
-import { Arrow, Chrome } from "../shared/Brand";
+import useReveal from "../useReveal";
+import { Arrow, Chrome } from "pages/shared/Brand";
 export default function FinalCta({ onTryDemo }: { onTryDemo: () => void }) {
   const reveal = useReveal();
   return (

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import useReveal from "../shared/useReveal";
+import useReveal from "../useReveal";
 import { FeaturePair, FeatureCard } from "./FeaturePair";
 import "./features-motion.css";
 export default function FeaturesSection() {

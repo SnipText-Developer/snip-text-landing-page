@@ -76,7 +76,11 @@ button,span {
   height:100%;
   display:flex;
   align-items:center;
-  justify-content:space-between;
+  justify-content:flex-start;
+  gap:48px;
+}
+.nav-wrap > .nav-cta {
+  margin-left:auto;
 }
 .logo {
   font-family:'DM Sans',sans-serif;
@@ -1246,6 +1250,7 @@ h2 {
 @media(max-width:900px) {
   .nav-wrap {
     padding:0 28px;
+    gap:28px;
   }
   nav {
     gap:20px;
