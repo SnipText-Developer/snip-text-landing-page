@@ -1,11 +1,13 @@
 {
-  "name": "react-boilerplate",
+  "name": "snip-text",
   "version": "0.1.0",
   "private": true,
   "type": "module",
   "dependencies": {
     "css-vars-ponyfill": "^2.4.9",
+    "framer-motion": "^14.7.1",
     "html5shiv": "^3.7.3",
+    "lenis": "^1.3.27",
     "mobile-device-detect": "^0.4.3",
     "pretendard": "^1.3.9",
     "react": "^19.1.0",
@@ -14,8 +16,9 @@
     "selectivizr": "^1.0.3"
   },
   "scripts": {
+    "dev": "react-scripts start",
     "start": "react-scripts start",
-    "build": "GENERATE_SOURCEMAP=false react-scripts build && sudo node ./scripts/minify.js"
+    "build": "GENERATE_SOURCEMAP=false react-scripts build"
   },
   "eslintConfig": {
     "extends": [

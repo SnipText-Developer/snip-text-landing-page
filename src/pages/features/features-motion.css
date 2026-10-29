@@ -1,0 +1,87 @@
+/* Each card receives its own 0–1 scroll progress from FeaturePair. */
+.feature-card {
+  --feature-progress: 1;
+}
+.feature-mint .visual-shortcut {
+  transform:translateY(calc(var(--feature-progress) * 12px));
+  opacity:calc(1 - var(--feature-progress) * .6);
+}
+.feature-mint .visual-shortcut kbd {
+  display:inline-block;
+  transform:translateY(calc(var(--feature-progress) * 3px));
+  background:#e6efd9;
+}
+.feature-mint .visual-arrow {
+  transform:translateY(calc(var(--feature-progress) * 8px));
+}
+.feature-mint .visual-message {
+  clip-path:inset(0 calc((1 - var(--feature-progress)) * 100%) 0 0);
+  transform:translateY(calc((1 - var(--feature-progress)) * 18px)) rotate(calc((1 - var(--feature-progress)) * -3deg));
+  opacity:var(--feature-progress);
+}
+.feature-mint .check-circle {
+  transform:scale(clamp(0, calc(var(--feature-progress) * 4 - 3), 1));
+}
+.feature-lilac .orbit-ring {
+  transform:rotate(calc(-15deg + var(--feature-progress) * 55deg));
+  border-color:#b6a4ce;
+}
+.feature-lilac .orbit-center {
+  transform:rotate(calc(-9deg + var(--feature-progress) * 9deg));
+}
+.feature-lilac .orbit-gmail {
+  transform:translate(calc(var(--feature-progress) * 24px), calc(var(--feature-progress) * 27px)) rotate(calc(-12deg + var(--feature-progress) * 12deg));
+}
+.feature-lilac .orbit-naver {
+  transform:translate(calc(var(--feature-progress) * -24px), calc(var(--feature-progress) * 27px)) rotate(calc(12deg - var(--feature-progress) * 12deg));
+}
+.feature-lilac .orbit-app {
+  box-shadow:0 4px 15px #4944520a, 0 0 0 calc(var(--feature-progress) * 5px) #d7cbe84d;
+}
+.feature-peach .variable-letter {
+  transform:rotate(calc((1 - var(--feature-progress)) * -2deg));
+}
+.animated-variable {
+  --variable-progress:clamp(0, calc((var(--feature-progress) - .35) / .65), 1);
+  position:relative;
+  display:inline-grid;
+  min-width:70px;
+  text-align:center;
+}
+.animated-variable::before {
+  content:attr(data-placeholder);
+  grid-area:1 / 1;
+  opacity:clamp(0, calc(1 - var(--variable-progress) * 3), 1);
+  transform:translateY(calc(var(--variable-progress) * -8px));
+  font-size:11px;
+}
+.animated-variable>span {
+  grid-area:1 / 1;
+  opacity:clamp(0, calc(var(--variable-progress) * 2 - .4), 1);
+  transform:translateY(calc((1 - var(--variable-progress)) * 12px));
+}
+.feature-peach .variable-chips>span {
+  transform:translateY(calc(var(--feature-progress) * -5px));
+}
+.feature-peach .variable-chips b {
+  opacity:clamp(0, calc(var(--feature-progress) * 4 - 3), 1);
+}
+.feature-yellow .korean-visual>span:nth-child(1) {
+  transform:translateX(calc(var(--feature-progress) * 30px));
+  opacity:calc(1 - var(--feature-progress) * .75);
+}
+.feature-yellow .korean-visual>span:nth-child(2) {
+  transform:translateX(calc(var(--feature-progress) * 15px));
+  opacity:calc(1 - var(--feature-progress) * .5);
+}
+.feature-yellow .korean-visual>.hangul-final {
+  transform:rotate(calc((1 - var(--feature-progress)) * 7deg)) scale(calc(.8 + var(--feature-progress) * .2));
+  opacity:clamp(.2, calc(var(--feature-progress) * 2), 1);
+}
+.feature-yellow .hangul-final>div {
+  transform:translateY(calc((1 - var(--feature-progress)) * 8px));
+  opacity:var(--feature-progress);
+}
+.feature-yellow .korean-spark {
+  transform:rotate(calc(var(--feature-progress) * 90deg)) scale(var(--feature-progress));
+}
