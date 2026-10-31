@@ -1,3 +1,4 @@
+import "./ScrollProgress.css";
 import { motion, useScroll, useSpring } from "framer-motion";
 
 export default function ScrollProgress() {

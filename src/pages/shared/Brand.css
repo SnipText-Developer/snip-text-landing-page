@@ -1,0 +1,42 @@
+.logo {
+  font-family: Pretendard, sans-serif;
+  font-synthesis: none;
+  font-optical-sizing: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -1.2px;
+}
+.logo-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ink);
+  color: var(--paper);
+  width: 30px;
+  height: 32px;
+  border-radius: 9px;
+  font:
+    700 27px Pretendard,
+    sans-serif;
+  font-synthesis: none;
+  font-optical-sizing: none;
+  letter-spacing: -2px;
+}
+.logo-mark > span {
+  color: var(--mint);
+}
+.logo-dot {
+  align-self: flex-start;
+  font-size: 10px;
+  letter-spacing: 0;
+  margin-left: -5px;
+  margin-top: 4px;
+}
+@media (max-width: 600px) {
+  .logo {
+    font-size: 22px;
+  }
+}

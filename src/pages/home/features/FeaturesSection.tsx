@@ -1,3 +1,4 @@
+import "./FeaturesSection.css";
 import { motion } from "framer-motion";
 import useReveal from "../useReveal";
 import { FeaturePair, FeatureCard } from "./FeaturePair";

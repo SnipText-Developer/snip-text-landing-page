@@ -1,3 +1,4 @@
+import "./FaqSection.css";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import useReveal from "../useReveal";

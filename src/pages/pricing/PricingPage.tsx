@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import Header from "pages/shared/header/Header";
 import Footer from "pages/shared/footer/Footer";
 import "./pricing.css";
@@ -19,11 +18,10 @@ const proFeatures = [
 
 export default function PricingPage() {
   const [annual, setAnnual] = useState(false);
-  const navigate = useNavigate();
 
   return (
     <div className="pricing-page" id="home">
-      <Header onTryDemo={() => navigate("/#demo")} />
+      <Header />
       <main className="pricing-main">
         <section aria-labelledby="pricing-title">
           <div className="pricing-intro">

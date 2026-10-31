@@ -1,48 +1,229 @@
-.support-page { min-height: 100vh; background: #fff; color: #202020; }
-.support-main { max-width: 920px; margin: auto; padding: 96px 32px 100px; }
-.support-intro { text-align: center; }
-.support-eyebrow { font-size: 17px; font-weight: 750; }
-.support-intro h1 { font-size: clamp(32px, 4vw, 52px); line-height: 1.32; letter-spacing: -2.2px; margin-top: 24px; font-weight: 800; }
-.support-description { font-size: 18px; color: #777; margin-top: 20px; }
-.support-form { max-width: 640px; margin: 80px auto 0; }
-.support-form fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
-.support-field { display: block; font-size: 14px; font-weight: 650; color: #555; margin-bottom: 28px; }
-.support-field > input, .support-field select, .support-message { margin-top: 10px; width: 100%; border: 1px solid transparent; border-radius: 12px; background: #f3f3f3; }
-.support-field > input, .support-field select, .support-message textarea { font: inherit; font-size: 16px; font-weight: 400; color: #202020; padding: 18px 16px; }
-.support-field select { min-height: 58px; padding-right: 32px; }
-.support-field select:invalid, .support-field input::placeholder, .support-message textarea::placeholder { color: #999; }
-.support-message { overflow: hidden; }
-.support-message textarea { display: block; width: 100%; min-height: 170px; resize: vertical; border: 0; background: transparent; line-height: 1.7; }
-.support-count { display: block; padding: 8px 16px 16px; font-size: 12px; font-weight: 400; color: #888; }
-.support-field input:focus-visible, .support-field select:focus-visible, .support-message:focus-within { outline: 2px solid #789d43; outline-offset: 2px; }
-.support-message textarea:focus { outline: none; }
-.support-attachment { position: relative; display: flex; align-items: center; justify-content: center; min-height: 56px; border: 1px dashed #c9c9c9; border-radius: 10px; color: #666; font-size: 15px; font-weight: 600; cursor: pointer; }
-.support-attachment input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; }
-.support-attachment:focus-within { outline: 2px solid #789d43; outline-offset: 3px; }
-.support-file-hint { margin-top: 8px; color: #888; font-size: 12px; }
-.support-file { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 12px; font-size: 14px; }
-.support-file span { overflow-wrap: anywhere; }
-.support-file button { background: transparent; color: #666; flex-shrink: 0; text-decoration: underline; }
-.support-consent { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-start; justify-content: space-between; margin: 28px 0; font-size: 14px; }
-.support-consent label { display: flex; align-items: center; gap: 10px; }
-.support-consent input { width: 20px; height: 20px; margin: 0; accent-color: #202020; flex-shrink: 0; }
-.support-consent details { flex: 1; min-width: 44px; text-align: right; }
-.support-consent summary { color: #777; cursor: pointer; }
-.support-consent details[open] { flex-basis: 100%; }
-.support-consent details p { text-align: left; color: #666; background: #f7f7f7; padding: 16px; border-radius: 10px; line-height: 1.8; margin-top: 12px; }
-.support-captcha { margin: 24px 0; min-height: 65px; }
-.support-captcha p, .support-status { font-size: 14px; line-height: 1.7; color: #777; }
-.support-submit { width: 100%; min-height: 60px; border-radius: 12px; background: #202020; color: white; font-size: 18px; font-weight: 700; }
-.support-submit:disabled { background: #e6e6e6; color: #929292; cursor: not-allowed; }
-.support-status { margin-top: 16px; }
-.support-footer { background: #fafafa; }
-.support-footer .footer { padding-top: 52px; padding-bottom: 52px; }
-.header nav a[aria-current="page"] { color: #202020; font-weight: 800; }
+.support-page {
+  min-height: 100vh;
+  background: #fff;
+  color: #202020;
+}
+.support-main {
+  max-width: 920px;
+  margin: auto;
+  padding: 96px 32px 100px;
+}
+.support-intro {
+  text-align: center;
+}
+.support-eyebrow {
+  font-size: 17px;
+  font-weight: 750;
+}
+.support-intro h1 {
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1.32;
+  letter-spacing: -2.2px;
+  margin-top: 24px;
+  font-weight: 800;
+}
+.support-description {
+  font-size: 18px;
+  color: #777;
+  margin-top: 20px;
+}
+.support-form {
+  max-width: 640px;
+  margin: 80px auto 0;
+}
+.support-form fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+.support-field {
+  display: block;
+  font-size: 14px;
+  font-weight: 650;
+  color: #555;
+  margin-bottom: 28px;
+}
+.support-field > input,
+.support-field select,
+.support-message {
+  margin-top: 10px;
+  width: 100%;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background: #f3f3f3;
+}
+.support-field > input,
+.support-field select,
+.support-message textarea {
+  font: inherit;
+  font-size: 16px;
+  font-weight: 400;
+  color: #202020;
+  padding: 18px 16px;
+}
+.support-field select {
+  min-height: 58px;
+  padding-right: 32px;
+}
+.support-field select:invalid,
+.support-field input::placeholder,
+.support-message textarea::placeholder {
+  color: #999;
+}
+.support-message {
+  overflow: hidden;
+}
+.support-message textarea {
+  display: block;
+  width: 100%;
+  min-height: 170px;
+  resize: vertical;
+  border: 0;
+  background: transparent;
+  line-height: 1.7;
+}
+.support-count {
+  display: block;
+  padding: 8px 16px 16px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #888;
+}
+.support-field input:focus-visible,
+.support-field select:focus-visible,
+.support-message:focus-within {
+  outline: 2px solid #789d43;
+  outline-offset: 2px;
+}
+.support-message textarea:focus {
+  outline: none;
+}
+.support-attachment {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  border: 1px dashed #c9c9c9;
+  border-radius: 10px;
+  color: #666;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.support-attachment input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+.support-attachment:focus-within {
+  outline: 2px solid #789d43;
+  outline-offset: 3px;
+}
+.support-consent {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin: 28px 0;
+  font-size: 14px;
+}
+.support-consent label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.support-consent input {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  accent-color: #202020;
+  flex-shrink: 0;
+}
+.support-consent details {
+  flex: 1;
+  min-width: 44px;
+  text-align: right;
+}
+.support-consent summary {
+  color: #777;
+  cursor: pointer;
+}
+.support-consent details[open] {
+  flex-basis: 100%;
+}
+.support-consent details p {
+  text-align: left;
+  color: #666;
+  background: #f7f7f7;
+  padding: 16px;
+  border-radius: 10px;
+  line-height: 1.8;
+  margin-top: 12px;
+}
+.support-captcha {
+  margin: 24px 0;
+  min-height: 65px;
+}
+.support-captcha p,
+.support-status {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #777;
+}
+.support-submit {
+  width: 100%;
+  min-height: 60px;
+  border-radius: 12px;
+  background: #202020;
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+}
+.support-submit:disabled {
+  background: #e6e6e6;
+  color: #929292;
+  cursor: not-allowed;
+}
+.support-status {
+  margin-top: 16px;
+}
+.support-footer {
+  background: #fafafa;
+}
+.support-footer .footer {
+  padding-top: 52px;
+  padding-bottom: 52px;
+}
+.header nav a[aria-current="page"] {
+  color: #202020;
+  font-weight: 800;
+}
 @media (max-width: 600px) {
-  .support-main { padding: 52px 20px 60px; }
-  .support-eyebrow { font-size: 15px; }
-  .support-intro h1 { letter-spacing: -1.7px; margin-top: 18px; }
-  .support-description { font-size: 16px; line-height: 1.7; }
-  .support-form { margin-top: 48px; }
-  .support-footer .footer { padding-top: 40px; padding-bottom: 40px; }
+  .support-main {
+    padding: 52px 20px 60px;
+  }
+  .support-eyebrow {
+    font-size: 15px;
+  }
+  .support-intro h1 {
+    letter-spacing: -1.7px;
+    margin-top: 18px;
+  }
+  .support-description {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+  .support-form {
+    margin-top: 48px;
+  }
+  .support-footer .footer {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
 }

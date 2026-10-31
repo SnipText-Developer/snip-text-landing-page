@@ -1,3 +1,4 @@
+import "./Compatibility.css";
 
 export default function Compatibility() {
 

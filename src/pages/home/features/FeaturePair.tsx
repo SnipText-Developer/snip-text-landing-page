@@ -1,3 +1,4 @@
+import "./FeaturePair.css";
 import { createContext, useContext, useRef, type ReactNode } from "react";
 import { motion, useReducedMotion, useScroll, useTransform, type MotionValue, type MotionStyle } from "framer-motion";
 const FeatureProgress = createContext<MotionValue<number> | null>(null);

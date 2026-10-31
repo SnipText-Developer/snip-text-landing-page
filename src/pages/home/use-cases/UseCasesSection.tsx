@@ -1,3 +1,4 @@
+import "./UseCasesSection.css";
 import { motion } from "framer-motion";
 import useReveal from "../useReveal";
 

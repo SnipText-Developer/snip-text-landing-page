@@ -6,7 +6,7 @@ import React from "react";
 // Local
 
 interface ExternalLinkProps
-  extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  extends Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, "target" | "rel" | "referrerPolicy"> {
   href: string;
   children: React.ReactNode;
 }
@@ -17,7 +17,7 @@ const ExternalLink: React.FC<ExternalLinkProps> = ({
   ...props
 }) => {
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer" {...props}>
+    <a {...props} href={href} target="_blank" rel="noopener noreferrer" referrerPolicy="no-referrer">
       {children}
     </a>
   );

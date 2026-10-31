@@ -36,10 +36,9 @@ export default function HomePage() {
   return (
     <div className="App" id="home">
       <ScrollProgress />
-      <Header onTryDemo={tryDemo} />
+      <Header />
       <main>
         <HeroSection
-          onTryDemo={tryDemo}
           expanded={expanded}
           setExpanded={setExpanded}
         />
