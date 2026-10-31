@@ -1,0 +1,56 @@
+.compatibility {
+  max-width: 1100px;
+  margin: auto;
+  padding: 37px 28px 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+  color: #747b6f;
+  border-bottom: 1px solid var(--line);
+  font:
+    600 18px Pretendard,
+    sans-serif;
+}
+.compatibility > span {
+  font:
+    11px Pretendard,
+    sans-serif;
+  color: #969c91;
+}
+.compatibility > div {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.compatibility b {
+  font-size: 23px;
+  color: #78856c;
+}
+.compatibility .naver-icon {
+  color: #03c75a;
+}
+@media (max-width: 900px) {
+  .compatibility {
+    gap: 22px;
+  }
+}
+@media (max-width: 600px) {
+  .compatibility {
+    padding: 25px 20px 38px;
+    gap: 20px;
+    flex-wrap: wrap;
+    font-size: 14px;
+  }
+  .compatibility > span:first-child {
+    width: 100%;
+    text-align: center;
+    font-size: 10px;
+  }
+  .compatibility b {
+    font-size: 19px;
+  }
+  .compatibility > div {
+    gap: 5px;
+  }
+}

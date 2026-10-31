@@ -1,0 +1,80 @@
+.final-cta {
+  text-align: center;
+  background: #242d24;
+  color: #fffef5;
+  padding: 85px 24px 90px;
+  position: relative;
+  overflow: hidden;
+}
+.final-cta > div:last-child {
+  position: relative;
+}
+.final-spark {
+  display: block;
+  color: var(--mint);
+  font-size: 48px;
+  line-height: 1;
+  margin-bottom: 25px;
+}
+.final-cta .section-label {
+  color: #a6b597;
+  font-size: 9px;
+}
+.final-cta h2 {
+  font-size: 42px;
+  line-height: 1.5;
+  letter-spacing: -2px;
+}
+.final-cta h2 > span {
+  color: #d7f5a7;
+}
+.final-cta p {
+  color: #a5b09c;
+  font-size: 13px;
+  margin: 20px 0 28px;
+}
+.button-mint {
+  background: var(--mint);
+  color: #34402a;
+}
+.final-note {
+  font-size: 10px;
+  color: #8b9b80;
+  margin-top: 16px;
+}
+.cta-orbit {
+  position: absolute;
+  border: 1px solid #ffffff08;
+  border-radius: 50%;
+  width: 850px;
+  height: 850px;
+  pointer-events: none;
+}
+.cta-orbit-one {
+  left: -640px;
+  top: -200px;
+}
+.cta-orbit-two {
+  right: -640px;
+  top: -150px;
+}
+@media (max-width: 900px) {
+  .final-cta h2 {
+    font-size: 36px;
+  }
+}
+@media (max-width: 600px) {
+  .final-cta {
+    padding: 60px 20px;
+  }
+  .final-cta h2 {
+    font-size: 28px;
+    letter-spacing: -1.2px;
+  }
+  .final-cta p {
+    font-size: 12px;
+  }
+  .final-spark {
+    font-size: 38px;
+  }
+}

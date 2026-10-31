@@ -1,3 +1,4 @@
+import "./Footer.css";
 import { Logo } from "../Brand";
 export default function Footer() {
 

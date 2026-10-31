@@ -1,3 +1,4 @@
+import "./Brand.css";
 import { Link } from "react-router-dom";
 
 export const Arrow = () => <span aria-hidden="true">↗</span>;

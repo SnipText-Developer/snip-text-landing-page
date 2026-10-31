@@ -1,3 +1,4 @@
+import "./MailDemo.css";
 import { useRef, useState } from "react";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { examples } from "./demoExamples";

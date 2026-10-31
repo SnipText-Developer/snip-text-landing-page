@@ -1,3 +1,4 @@
+import "./FinalCta.css";
 import { motion } from "framer-motion";
 import useReveal from "../useReveal";
 import { Arrow, Chrome } from "pages/shared/Brand";

@@ -1,3 +1,4 @@
+import "./PainSection.css";
 import { motion } from "framer-motion";
 import useReveal from "../useReveal";
 

@@ -1,10 +1,12 @@
+import "./HeroSection.css";
 import { motion } from "framer-motion";
 import useReveal from "../useReveal";
 import { Arrow, Chrome } from "pages/shared/Brand";
 import MailDemo from "./MailDemo";
+import ExternalLink from "components/ExternalLink";
+import { snipTextUrl } from "config";
 
-export default function HeroSection({ onTryDemo, expanded, setExpanded }: {
-  onTryDemo: () => void;
+export default function HeroSection({ expanded, setExpanded }: {
   expanded: boolean;
   setExpanded: (expanded: boolean) => void;
 }) {
@@ -29,9 +31,9 @@ export default function HeroSection({ onTryDemo, expanded, setExpanded }: {
           <br />
           어디서든 단축어 + Enter. 당신의 말이 바로 펼쳐집니다.
         </p>
-        <button className="button button-dark" onClick={onTryDemo}>
+        <ExternalLink className="button button-dark" href={snipTextUrl}>
           <Chrome /> SnipText 먼저 써보기 <Arrow />
-        </button>
+        </ExternalLink>
         <div className="cta-note">
           설치 없이 체험하기 <span>·</span> 반복을 줄이는 첫 3초
         </div>
