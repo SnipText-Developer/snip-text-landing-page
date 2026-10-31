@@ -1,5 +1,8 @@
 .logo {
-  font-family: Pretendard, sans-serif;
+  font-family:
+    Pretendard,
+    -apple-system,
+    system-ui;
   font-synthesis: none;
   font-optical-sizing: none;
   display: inline-flex;
