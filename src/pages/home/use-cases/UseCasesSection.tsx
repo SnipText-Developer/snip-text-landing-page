@@ -26,7 +26,7 @@ export default function UseCasesSection() {
               </>
             ),
             text: "매번 비슷한 제안서와 견적 안내. 반복되는 설명 대신, 더 좋은 결과물에 집중하세요.",
-            tags: ["/견적", "/계약"],
+            tags: ["\\견적", "\\계약"],
             color: "mint",
           },
           {
@@ -40,7 +40,7 @@ export default function UseCasesSection() {
               </>
             ),
             text: "배송, 환불, 자주 묻는 질문까지. 한결같은 안내에 고객의 이름만 더해보세요.",
-            tags: ["/교환", "/문의"],
+            tags: ["\\교환", "\\문의"],
             color: "lilac",
           },
           {
@@ -54,7 +54,7 @@ export default function UseCasesSection() {
               </>
             ),
             text: "회사 주소부터 회의 안내까지. 머릿속에 담아둘 필요 없이 가볍게 꺼내 쓰세요.",
-            tags: ["/주소", "/회의"],
+            tags: ["\\주소", "\\회의"],
             color: "peach",
           },
         ].map((item) => (

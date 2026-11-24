@@ -62,7 +62,6 @@ export default function MailDemo({ expanded, setExpanded }: {
                 </div>
                 <div className="mail-nav selected">
                   ▣ <span>받은편지함</span>
-                  <small>12</small>
                 </div>
                 <div className="mail-nav">
                   ☆ <span>별표편지함</span>
@@ -75,7 +74,6 @@ export default function MailDemo({ expanded, setExpanded }: {
                 </div>
                 <div className="mail-nav">
                   ▤ <span>임시보관함</span>
-                  <small>3</small>
                 </div>
                 <div className="sidebar-bottom">
                   <span className="logo-mark">s·</span> with sniptext
