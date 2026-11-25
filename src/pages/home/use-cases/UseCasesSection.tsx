@@ -7,11 +7,7 @@ export default function UseCasesSection() {
   return (
     <section className="use-cases section-wrap" id="use-cases">
       <motion.div {...reveal} className="section-heading">
-        <div className="section-label">YOUR WORDS, YOUR WORKFLOW.</div>
-        <h2>
-          누가 써도, 어디서 써도
-          <br />잘 맞는 이유.
-        </h2>
+        <h2>반복해서 쓰는 메일에 써 보세요</h2>
       </motion.div>
       <div className="use-grid">
         {[
@@ -20,13 +16,13 @@ export default function UseCasesSection() {
             role: "프리랜서 · 1인 기업",
             title: (
               <>
-                하루 5건의 견적 메일,
+                고객마다 보내는
                 <br />
-                단축어 하나로.
+                견적 안내 메일
               </>
             ),
-            text: "매번 비슷한 제안서와 견적 안내. 반복되는 설명 대신, 더 좋은 결과물에 집중하세요.",
-            tags: ["\\견적", "\\계약"],
+            text: "매번 쓰는 견적 안내를 템플릿으로 저장하고, 고객명과 금액만 새로 입력하세요.",
+            tags: ["\\견적", "{{금액}}"],
             color: "mint",
           },
           {
@@ -34,27 +30,27 @@ export default function UseCasesSection() {
             role: "CS 담당자",
             title: (
               <>
-                반품·교환 안내는 빠르게,
+                문의가 올 때마다 보내는
                 <br />
-                고객에게는 다정하게.
+                교환 안내 메일
               </>
             ),
-            text: "배송, 환불, 자주 묻는 질문까지. 한결같은 안내에 고객의 이름만 더해보세요.",
-            tags: ["\\교환", "\\문의"],
+            text: "교환 절차는 템플릿으로 저장해 두고, 답장마다 고객명과 주문번호만 채우세요.",
+            tags: ["\\교환", "{{주문번호}}"],
             color: "lilac",
           },
           {
             icon: "✳",
-            role: "일잘러의 일상",
+            role: "팀 일정 안내",
             title: (
               <>
-                매번 찾던 메일 양식,
+                일정이 잡힐 때마다 보내는
                 <br />
-                이제 외우지 마세요.
+                회의 안내 메일
               </>
             ),
-            text: "회사 주소부터 회의 안내까지. 머릿속에 담아둘 필요 없이 가볍게 꺼내 쓰세요.",
-            tags: ["\\주소", "\\회의"],
+            text: "회의 안내 템플릿을 불러와 이번 회의의 날짜, 시간, 안건만 입력하세요.",
+            tags: ["\\회의", "{{날짜}}"],
             color: "peach",
           },
         ].map((item) => (

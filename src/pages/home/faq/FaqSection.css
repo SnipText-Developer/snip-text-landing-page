@@ -11,7 +11,7 @@
 }
 .faq-star {
   display: block;
-  color: #b6c999;
+  color: var(--highlight);
   font-size: 52px;
   margin-top: 20px;
 }
@@ -30,7 +30,7 @@
   text-align: left;
   background: none;
   padding: 23px 0;
-  font-size: 14px;
+  font-size: 1.0625rem;
   font-weight: 600;
   color: var(--ink);
 }
@@ -38,12 +38,12 @@
   font:
     22px Pretendard,
     sans-serif;
-  color: #8c977f;
+  color: var(--accent);
 }
 .faq-item p {
-  font-size: 13px;
+  font-size: 1rem;
   line-height: 1.9;
-  color: #8b9381;
+  color: var(--muted);
   padding: 0 20px 25px 0;
 }
 @media (max-width: 900px) {
@@ -68,10 +68,6 @@
     display: none;
   }
   .faq-item button {
-    font-size: 13px;
     padding: 20px 0;
-  }
-  .faq-item p {
-    font-size: 12px;
   }
 }

@@ -1,44 +1,28 @@
 import "./HeroSection.css";
-import { motion } from "framer-motion";
-import useReveal from "../useReveal";
-import { Arrow, Chrome } from "pages/shared/Brand";
+import type { DemoPreview } from "./demoExamples";
 import MailDemo from "./MailDemo";
-import ExternalLink from "components/ExternalLink";
-import { snipTextUrl } from "config";
+import MailScrollPreview from "./MailScrollPreview";
 
-export default function HeroSection({ expanded, setExpanded }: {
-  expanded: boolean;
-  setExpanded: (expanded: boolean) => void;
+export default function HeroSection({ preview, onPreviewChange }: {
+  preview: DemoPreview | null;
+  onPreviewChange: (preview: DemoPreview | null) => void;
 }) {
-  const reveal = useReveal();
   return (
-    <section className="hero section-wrap">
-      <motion.div {...reveal} className="hero-content">
-        <div className="eyebrow">
-          <span className="live-dot" /> 반복은 짧게, 당신의 시간은 길게
-        </div>
-        <h1>
-          자주 쓰는 문장,
+    <section className="hero section-wrap" aria-labelledby="hero-title">
+      <div className="hero-content">
+        <h1 id="hero-title">
+          비슷한 메일,
           <br />
-          이제{" "}
-          <span className="hero-highlight">
-            단축어 하나<span className="highlight-spark">✳</span>
-          </span>
-          로.
+          <span>매번 다시 쓰고 있나요?</span>
         </h1>
         <p className="hero-description">
-          매번 쓰던 그 문장, 또 쓰고 있나요?
-          <br />
-          어디서든 단축어 + Enter. 당신의 말이 바로 펼쳐집니다.
+          견적 안내나 회의 공지는 같은 양식을 쓰는데도 보낼 때마다 다시 쓰기 번거롭죠.
+          자주 쓰는 메일을 템플릿으로 저장하고 단축어로 불러오세요. 고객명, 금액, 날짜만 바꾸면 새 메일이 완성됩니다.
         </p>
-        <ExternalLink className="button button-dark" href={snipTextUrl}>
-          <Chrome /> SnipText 먼저 써보기 <Arrow />
-        </ExternalLink>
-        <div className="cta-note">
-          설치 없이 체험하기 <span>·</span> 반복을 줄이는 첫 3초
-        </div>
-      </motion.div>
-      <MailDemo expanded={expanded} setExpanded={setExpanded} />
+        <a className="button hero-cta" href="#demo">견적 메일로 체험하기</a>
+      </div>
+      <MailDemo onPreviewChange={onPreviewChange} />
+      <MailScrollPreview preview={preview} />
     </section>
   );
 }

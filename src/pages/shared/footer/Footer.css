@@ -6,19 +6,21 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
   padding-bottom: 35px;
 }
 .footer-top .logo {
   font-size: 21px;
 }
 .footer-top p {
-  font-size: 11px;
-  color: #9ca292;
+  font-size: 0.875rem;
+  color: var(--muted);
   margin-top: 12px;
 }
 .footer-top > a {
-  font-size: 11px;
-  color: #7a8570;
+  font-size: 0.875rem;
+  color: var(--muted);
 }
 .footer-top > a span {
   margin-left: 12px;
@@ -28,12 +30,12 @@
   padding-top: 22px;
   display: flex;
   justify-content: space-between;
-  color: #a0a696;
+  color: var(--muted);
   font:
-    9px Pretendard,
+    0.8125rem Pretendard,
     sans-serif;
 }
-.footer-bottom .green-period {
+.footer-bottom .accent-period {
   font-size: 16px;
   margin-left: 8px;
 }
@@ -47,7 +49,6 @@
   .footer-bottom {
     gap: 15px;
     flex-wrap: wrap;
-    font-size: 9px;
   }
   .footer-bottom > span:last-child {
     display: none;

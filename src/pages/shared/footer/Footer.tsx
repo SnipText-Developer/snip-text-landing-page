@@ -18,7 +18,7 @@ export default function Footer() {
           © {new Date().getFullYear()} SnipText. All rights reserved.
         </span>
         <span>
-          Made for your everyday flow. <span className="green-period">✳</span>
+          Made for your everyday flow. <span className="accent-period">✳</span>
         </span>
       </div>
     </footer>

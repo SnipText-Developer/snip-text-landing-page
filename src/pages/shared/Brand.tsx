@@ -2,14 +2,23 @@ import "./Brand.css";
 import { Link } from "react-router-dom";
 
 export const Arrow = () => <span aria-hidden="true">↗</span>;
+export const LogoMark = ({ size = 32 }: { size?: number }) => (
+  <img
+    className="logo-mark"
+    src={`${process.env.PUBLIC_URL}/logo/logo-192.png`}
+    width={size}
+    height={size}
+    alt=""
+  />
+);
+
 export const Logo = () => (
   <Link to="/" className="logo" aria-label="SnipText 홈">
-    <span className="logo-mark">
-      s<span>·</span>
-    </span>
-    sniptext<span className="logo-dot">®</span>
+    <LogoMark />
+    SnipText
   </Link>
 );
+
 export const Chrome = () => (
   <svg
     width="19"

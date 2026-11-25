@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { useReducedMotion } from "framer-motion";
 import Header from "pages/shared/header/Header";
 import Footer from "pages/shared/footer/Footer";
 import HeroSection from "./hero/HeroSection";
+import type { DemoPreview } from "./hero/demoExamples";
 import Compatibility from "./compatibility/Compatibility";
-import PainSection from "./pain/PainSection";
 import FeaturesSection from "./features/FeaturesSection";
 import UseCasesSection from "./use-cases/UseCasesSection";
 import FaqSection from "./faq/FaqSection";
@@ -13,41 +12,28 @@ import FinalCta from "./final-cta/FinalCta";
 import ScrollProgress from "./ScrollProgress";
 
 export default function HomePage() {
-  const reducedMotion = useReducedMotion();
-  const [expanded, setExpanded] = useState(false);
-  const tryDemo = () => {
-    setExpanded(true);
-    document.getElementById("demo")?.scrollIntoView({
-      behavior: reducedMotion ? "auto" : "smooth",
-      block: "center",
-    });
-  };
-  const location = useLocation();
+  const [preview, setPreview] = useState<DemoPreview | null>(null);
+  const { hash } = useLocation();
+
   useEffect(() => {
-    if (location.hash === "#demo") setExpanded(true);
-    if (!location.hash) return;
+    if (!hash) return;
     const frame = requestAnimationFrame(() => {
-      document.getElementById(location.hash.slice(1))?.scrollIntoView({
-        block: location.hash === "#demo" ? "center" : "start",
-      });
+      document.getElementById(hash.slice(1))?.scrollIntoView();
     });
     return () => cancelAnimationFrame(frame);
-  }, [location.hash]);
+  }, [hash]);
+
   return (
     <div className="App" id="home">
       <ScrollProgress />
       <Header />
       <main>
-        <HeroSection
-          expanded={expanded}
-          setExpanded={setExpanded}
-        />
+        <HeroSection preview={preview} onPreviewChange={setPreview} />
         <Compatibility />
-        <PainSection />
-        <FeaturesSection />
+        <FeaturesSection preview={preview} />
         <UseCasesSection />
         <FaqSection />
-        <FinalCta onTryDemo={tryDemo} />
+        <FinalCta />
       </main>
       <Footer />
     </div>

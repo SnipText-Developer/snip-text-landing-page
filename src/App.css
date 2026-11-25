@@ -1,9 +1,15 @@
 :root {
-  --ink: #202722;
-  --muted: #7c827d;
-  --mint: #d7f5a7;
-  --line: #e8ebe5;
-  --paper: #fffefa;
+  --ink: var(--color);
+  --muted: #4e5968;
+  --accent: #2456c7;
+  --accent-hover: #19439f;
+  --accent-soft: #e8eeff;
+  --highlight: #c7d9ff;
+  --line: #dbe3f0;
+  --paper: #fff;
+  --surface: var(--bg-color);
+  --navy: #142747;
+  --on-navy: #dbe7ff;
 }
 * {
   box-sizing: border-box;
@@ -12,7 +18,7 @@ html {
   scroll-padding-top: 100px;
 }
 body {
-  background: var(--paper);
+  background: var(--surface);
   color: var(--ink);
   word-break: keep-all;
 }
@@ -30,7 +36,7 @@ a {
 }
 button:focus-visible,
 a:focus-visible {
-  outline: 3px solid #789d43;
+  outline: 3px solid var(--accent);
   outline-offset: 5px;
 }
 button {
@@ -47,7 +53,7 @@ span {
   line-height: inherit;
 }
 ::selection {
-  background: #d7f5a7;
+  background: var(--highlight);
 }
 .section-wrap {
   max-width: 1160px;
@@ -60,8 +66,8 @@ span {
   height: 6px;
   display: inline-block;
   border-radius: 50%;
-  background: #7ca64f;
-  box-shadow: 0 0 0 4px #83ac4920;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px #2456c720;
 }
 .button {
   display: inline-flex;
@@ -71,14 +77,14 @@ span {
   border-radius: 8px;
   padding: 18px 23px;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 1rem;
   transition:
     transform 0.2s,
     box-shadow 0.2s;
 }
 .button:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px #18241b15;
+  box-shadow: 0 8px 20px #14274720;
 }
 .button > span {
   margin-left: 14px;
@@ -86,10 +92,10 @@ span {
 }
 .section-label {
   font:
-    600 10px Pretendard,
+    700 0.875rem Pretendard,
     sans-serif;
   letter-spacing: 1.8px;
-  color: #8b957f;
+  color: var(--accent);
   margin-bottom: 20px;
 }
 h2 {
@@ -98,15 +104,15 @@ h2 {
   letter-spacing: -1.9px;
   font-weight: 700;
 }
-.green-period {
-  color: #8ba863;
+.accent-period {
+  color: var(--accent);
 }
 .section-description {
-  font-size: 14px;
-  color: #858b7d;
+  font-size: 1rem;
+  color: var(--muted);
   line-height: 1.9;
   margin-top: 18px;
-  letter-spacing: -0.3px;
+  letter-spacing: normal;
 }
 .section-heading {
   text-align: center;
@@ -127,11 +133,9 @@ h2 {
     padding-right: 20px;
   }
   .button {
-    font-size: 12px;
     padding: 16px 18px;
   }
   .section-label {
-    font-size: 9px;
     letter-spacing: 1.3px;
     margin-bottom: 14px;
   }
@@ -140,7 +144,6 @@ h2 {
     letter-spacing: -1.2px;
   }
   .section-description {
-    font-size: 12px;
     margin-top: 14px;
   }
   .section-heading {
