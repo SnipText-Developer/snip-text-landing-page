@@ -128,10 +128,6 @@
 .mail-nav span {
   font-size: 10px;
 }
-.mail-nav small {
-  margin-left: auto;
-  font-size: 9px;
-}
 .mail-nav.selected {
   background: #e2e9d9;
   border-radius: 20px;

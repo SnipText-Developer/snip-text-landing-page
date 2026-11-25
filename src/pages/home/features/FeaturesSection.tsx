@@ -33,7 +33,7 @@ export default function FeaturesSection() {
           </p>
           <div className="shortcut-visual">
             <div className="visual-shortcut">
-              /인사 <kbd>Enter</kbd>
+              \인사 <kbd>Enter</kbd>
             </div>
             <div className="visual-arrow">↓</div>
             <div className="visual-message">
