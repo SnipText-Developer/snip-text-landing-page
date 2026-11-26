@@ -4,7 +4,7 @@
   left: 0;
   right: 0;
   height: 3px;
-  background: #a0c976;
+  background: var(--accent);
   transform-origin: 0%;
   z-index: 100;
 }

@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: center;
   gap: 35px;
-  color: #747b6f;
+  color: var(--muted);
   border-bottom: 1px solid var(--line);
   font:
     600 18px Pretendard,
@@ -14,9 +14,9 @@
 }
 .compatibility > span {
   font:
-    11px Pretendard,
+    0.875rem Pretendard,
     sans-serif;
-  color: #969c91;
+  color: var(--muted);
 }
 .compatibility > div {
   display: flex;
@@ -25,7 +25,7 @@
 }
 .compatibility b {
   font-size: 23px;
-  color: #78856c;
+  color: var(--accent);
 }
 .compatibility .naver-icon {
   color: #03c75a;
@@ -45,7 +45,6 @@
   .compatibility > span:first-child {
     width: 100%;
     text-align: center;
-    font-size: 10px;
   }
   .compatibility b {
     font-size: 19px;

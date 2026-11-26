@@ -1,7 +1,7 @@
 .final-cta {
   text-align: center;
-  background: #242d24;
-  color: #fffef5;
+  background: var(--navy);
+  color: var(--paper);
   padding: 85px 24px 90px;
   position: relative;
   overflow: hidden;
@@ -11,14 +11,13 @@
 }
 .final-spark {
   display: block;
-  color: var(--mint);
+  color: var(--highlight);
   font-size: 48px;
   line-height: 1;
   margin-bottom: 25px;
 }
 .final-cta .section-label {
-  color: #a6b597;
-  font-size: 9px;
+  color: var(--on-navy);
 }
 .final-cta h2 {
   font-size: 42px;
@@ -26,20 +25,23 @@
   letter-spacing: -2px;
 }
 .final-cta h2 > span {
-  color: #d7f5a7;
+  color: var(--highlight);
 }
 .final-cta p {
-  color: #a5b09c;
-  font-size: 13px;
+  color: var(--on-navy);
+  font-size: 1rem;
   margin: 20px 0 28px;
 }
-.button-mint {
-  background: var(--mint);
-  color: #34402a;
+.button-light {
+  background: var(--highlight);
+  color: var(--navy);
+}
+.button-light:focus-visible {
+  outline-color: var(--highlight);
 }
 .final-note {
-  font-size: 10px;
-  color: #8b9b80;
+  font-size: 0.875rem;
+  color: var(--on-navy);
   margin-top: 16px;
 }
 .cta-orbit {
@@ -70,9 +72,6 @@
   .final-cta h2 {
     font-size: 28px;
     letter-spacing: -1.2px;
-  }
-  .final-cta p {
-    font-size: 12px;
   }
   .final-spark {
     font-size: 38px;

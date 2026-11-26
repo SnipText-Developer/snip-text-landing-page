@@ -3,35 +3,14 @@
   "name": "{{ name }}",
   "icons": [
     {
-      "src": "/logo/favicon.ico",
-      "sizes": "256x256",
+      "src": "/favicon.ico",
+      "sizes": "16x16 32x32 48x48",
       "type": "image/x-icon"
     },
     {
-      "src": "/logo/logo192.png",
+      "src": "/logo/logo-192.png",
       "type": "image/png",
       "sizes": "192x192"
-    },
-    {
-      "src": "/logo/logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
-    }
-  ],
-  "screenshots": [
-    {
-      "src": "/logo/logo512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "form_factor": "wide",
-      "label": "Logo"
-    },
-    {
-      "src": "/logo/logo512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "form_factor": "narrow",
-      "label": "Logo"
     }
   ],
   "start_url": ".",

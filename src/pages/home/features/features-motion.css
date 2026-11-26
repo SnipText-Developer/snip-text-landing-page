@@ -1,26 +1,24 @@
-/* Each card receives its own 0–1 scroll progress from FeaturePair. */
+/* Each card receives its own scroll progress. */
 .feature-card {
   --feature-progress: 1;
 }
-.feature-mint .visual-shortcut {
-  transform:translateY(calc(var(--feature-progress) * 12px));
-  opacity:calc(1 - var(--feature-progress) * .6);
+.shortcut-mail-search {
+  opacity: clamp(0, calc((0.75 - var(--feature-progress)) * 5), 1);
+  transform: translateY(clamp(-6px, calc((0.55 - var(--feature-progress)) * 30px), 0px));
 }
-.feature-mint .visual-shortcut kbd {
-  display:inline-block;
-  transform:translateY(calc(var(--feature-progress) * 3px));
-  background:#e6efd9;
+.shortcut-mail-result {
+  opacity: clamp(0, calc((var(--feature-progress) - 0.67) * 5), 1);
+  transform: translateY(clamp(0px, calc((0.87 - var(--feature-progress)) * 30px), 6px));
 }
-.feature-mint .visual-arrow {
-  transform:translateY(calc(var(--feature-progress) * 8px));
-}
-.feature-mint .visual-message {
-  clip-path:inset(0 calc((1 - var(--feature-progress)) * 100%) 0 0);
-  transform:translateY(calc((1 - var(--feature-progress)) * 18px)) rotate(calc((1 - var(--feature-progress)) * -3deg));
-  opacity:var(--feature-progress);
-}
-.feature-mint .check-circle {
-  transform:scale(clamp(0, calc(var(--feature-progress) * 4 - 3), 1));
+@media (prefers-reduced-motion: reduce), (max-height: 500px) {
+  .shortcut-mail-example {
+    gap: 0.875rem;
+  }
+  .shortcut-mail-stage {
+    grid-area: auto;
+    opacity: 1;
+    transform: none;
+  }
 }
 .feature-lilac .orbit-ring {
   transform:rotate(calc(-15deg + var(--feature-progress) * 55deg));
@@ -45,7 +43,8 @@
   --variable-progress:clamp(0, calc((var(--feature-progress) - .35) / .65), 1);
   position:relative;
   display:inline-grid;
-  min-width:70px;
+  width: min(7rem, 100%);
+  grid-template-columns:minmax(0, 1fr);
   text-align:center;
 }
 .animated-variable::before {
@@ -57,6 +56,9 @@
 }
 .animated-variable>span {
   grid-area:1 / 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   opacity:clamp(0, calc(var(--variable-progress) * 2 - .4), 1);
   transform:translateY(calc((1 - var(--variable-progress)) * 12px));
 }

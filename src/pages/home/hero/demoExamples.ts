@@ -1,20 +1,42 @@
-export const examples = [
-  {
-    shortcut: "\\인사",
-    title: "첫인사도, 나답게",
-    text: "안녕하세요, 김민지님.\nSnipText 팀의 이지수입니다.\n보내주신 제안서 잘 받았습니다.\n좋은 협업으로 이어지길 기대합니다. 🙂",
-    tags: ["고객명", "담당자"],
-  },
-  {
-    shortcut: "\\회의",
-    title: "회의 준비는 3초면 끝",
-    text: "안녕하세요, 팀 여러분!\n이번 주 금요일 오후 2시에 만나요.\n이번 회의에서는 신규 프로젝트의\n진행 상황을 함께 나눌 예정입니다. 📅",
-    tags: ["날짜", "시간", "안건"],
-  },
-  {
-    shortcut: "\\감사",
-    title: "마음은 담고, 시간은 아끼고",
-    text: "함께해 주셔서 감사합니다.\n보내주신 의견 덕분에\n한 걸음 더 나아갈 수 있었어요.\n오늘도 기분 좋은 하루 보내세요! 🌿",
-    tags: ["고객명"],
-  },
-];
+export const sampleQuoteValues = { 고객명: "김민지", 금액: "150,000" };
+
+export const quoteExample = {
+  shortcut: "\\견적",
+  template: "안녕하세요, {{고객명}}님.\n요청하신 작업의 견적은 {{금액}}원입니다.\n검토 후 궁금한 점은 편하게 알려주세요.",
+  variables: [
+    { name: "고객명", placeholder: "예: 김민지" },
+    { name: "금액", placeholder: "예: 150,000" },
+  ],
+};
+
+export const meetingExample = {
+  shortcut: "\\회의",
+  template: "안녕하세요. 다음 회의 일정을 안내드립니다.\n참석 가능 여부를 회신해 주세요.",
+  variables: [],
+};
+
+export const demoTemplates = [quoteExample, meetingExample];
+
+export type DemoTemplate = (typeof demoTemplates)[number];
+
+export type DemoPreview = {
+  template: DemoTemplate;
+  values: Record<string, string>;
+  before: string;
+  after: string;
+};
+
+export function getDemoCommand(body: string, caret: number) {
+  return body.slice(0, caret).match(/(?:^|\s)(\\[^\s\\]*)$/)?.[1];
+}
+
+export function fillDemoTemplate(template: DemoTemplate, values: Record<string, string>) {
+  return template.template.replace(/\{\{\s*([^{}]+?)\s*\}\}/g,
+    (placeholder, name: string) => values[name.trim()] ?? placeholder,
+  );
+}
+
+export function shortenPreviewValue(value: string) {
+  const characters = Array.from(value);
+  return characters.length > 8 ? characters.slice(0, 8).join("") + "..." : value;
+}
