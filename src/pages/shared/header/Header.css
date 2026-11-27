@@ -50,7 +50,7 @@
   }
   .nav-wrap {
     padding: 0 clamp(8px, 2.5vw, 20px);
-    gap: clamp(6px, 1.5vw, 12px);
+    gap: 12px;
   }
   .nav-wrap > .logo {
     font-size: clamp(16px, 3.5vw, 22px);
@@ -62,7 +62,8 @@
     border-radius: 7px;
   }
   .nav-cta {
-    padding: 11px 8px;
+    padding: 11px;
+    padding-left: 13px;
     gap: 6px;
   }
 }

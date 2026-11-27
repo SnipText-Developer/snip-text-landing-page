@@ -36,6 +36,8 @@
     sans-serif;
 }
 .footer-bottom .accent-period {
+  background: var(--accent-soft);
+  border-radius: 11px;
   font-size: 16px;
   margin-left: 8px;
 }

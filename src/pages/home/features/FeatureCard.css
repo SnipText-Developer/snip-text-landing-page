@@ -17,23 +17,26 @@
   display: grid;
   align-items: center;
 }
+.feature-content {
+  display: flow-root;
+}
 @media (max-width: 700px) {
   .feature-viewport {
     top: 70px;
     min-height: calc(100vh - 70px);
   }
   .feature-viewport .feature-card {
-    min-height: 0;
+    min-height: var(--feature-card-height, 0px);
     padding: 14px 20px;
   }
   .feature-viewport .feature-card h3 {
     font-size: 20px;
     margin: 7px 0;
   }
-  .feature-viewport .feature-card > p {
+  .feature-viewport .feature-content > p {
     margin: 6px 0;
   }
-  .feature-viewport .feature-card > div {
+  .feature-viewport .feature-content > div {
     padding-top: 8px;
     padding-bottom: 0;
   }

@@ -1,10 +1,37 @@
 import "./FeaturesSection.css";
 import { motion } from "framer-motion";
+import { useLayoutEffect, useRef } from "react";
 import useReveal from "../useReveal";
 import { demoTemplates, meetingExample, quoteExample, sampleQuoteValues, shortenPreviewValue, type DemoPreview } from "../hero/demoExamples";
 import { FeatureCard } from "./FeatureCard";
 import "./features-motion.css";
 export default function FeaturesSection({ preview }: { preview: DemoPreview | null }) {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useLayoutEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const contents = Array.from(section.querySelectorAll<HTMLElement>(".feature-content"));
+    function matchCardHeights() {
+      const heights = contents.map((content) => {
+        const cardStyle = getComputedStyle(content.parentElement!);
+        const contentHeight = parseFloat(getComputedStyle(content).height);
+        return contentHeight + parseFloat(cardStyle.paddingTop) + parseFloat(cardStyle.paddingBottom);
+      });
+      section?.style.setProperty("--feature-card-height", `${Math.ceil(Math.max(...heights))}px`);
+    }
+
+    matchCardHeights();
+    const observer = typeof ResizeObserver === "undefined" ? null : new ResizeObserver(matchCardHeights);
+    contents.forEach((content) => observer?.observe(content));
+    window.addEventListener("resize", matchCardHeights);
+    return () => {
+      observer?.disconnect();
+      window.removeEventListener("resize", matchCardHeights);
+    };
+  }, []);
+
   const values: Record<string, string> = preview?.template === quoteExample && Object.keys(preview.values).length
     ? preview.values
     : sampleQuoteValues;
@@ -13,7 +40,7 @@ export default function FeaturesSection({ preview }: { preview: DemoPreview | nu
 
   const reveal = useReveal();
   return (
-    <section className="features section-wrap" id="features">
+    <section ref={sectionRef} className="features section-wrap" id="features">
       <motion.div {...reveal} className="section-heading">
         <div className="section-label">단축어와 변수 치환</div>
         <h2>
@@ -33,9 +60,7 @@ export default function FeaturesSection({ preview }: { preview: DemoPreview | nu
           짧은 단축어 하나로.
         </h3>
         <p>
-          메일 본문에 <code>\</code>를 입력하면 커서 아래에 최근 사용 목록이 뜹니다.
-          <br />
-          <code>{meetingExample.shortcut}</code>를 선택하고 Enter를 누르면 저장한 템플릿이 본문에 바로 들어갑니다.
+          메일 본문에 <code>\</code>를 입력한 뒤, 최근 목록에서 <code>{meetingExample.shortcut}</code>를 선택하고 Enter를 눌러 템플릿을 불러오세요.
         </p>
         <div className="shortcut-visual shortcut-mail-example" aria-hidden="true">
           <div className="shortcut-mail-stage shortcut-mail-search">

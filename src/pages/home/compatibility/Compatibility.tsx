@@ -1,15 +1,16 @@
 import "./Compatibility.css";
 
 export default function Compatibility() {
-
   return (
     <div className="compatibility">
       <span>지원 메일</span>
       <div>
-        <b className="gmail-icon">M</b> Gmail
+        <img src={`${process.env.PUBLIC_URL}/gmail-logo.webp`} alt="" width={24} height={24} />
+        Gmail
       </div>
       <div>
-        <b className="naver-icon">N</b> Naver
+        <img src={`${process.env.PUBLIC_URL}/naver-logo.ico`} alt="" width={24} height={24} />
+        Naver
       </div>
     </div>
   );

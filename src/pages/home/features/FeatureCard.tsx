@@ -31,7 +31,7 @@ export function FeatureCard({ children, className, trackClassName = "", smooth =
     <div ref={track} className={`feature-track ${trackClassName}`}>
       <div className="feature-viewport">
         <motion.article className={className} style={style}>
-          {children}
+          <div className="feature-content">{children}</div>
         </motion.article>
       </div>
     </div>

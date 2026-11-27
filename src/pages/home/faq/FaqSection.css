@@ -11,7 +11,10 @@
 }
 .faq-star {
   display: block;
-  color: var(--highlight);
+  width: fit-content;
+  background: var(--accent-soft);
+  border-radius: 11px;
+  color: var(--accent);
   font-size: 52px;
   margin-top: 20px;
 }
