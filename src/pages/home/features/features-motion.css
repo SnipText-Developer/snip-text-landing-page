@@ -3,12 +3,14 @@
   --feature-progress: 1;
 }
 .shortcut-mail-search {
-  opacity: clamp(0, calc((0.75 - var(--feature-progress)) * 5), 1);
-  transform: translateY(clamp(-6px, calc((0.55 - var(--feature-progress)) * 30px), 0px));
+  --shortcut-fade: clamp(0, calc((var(--feature-progress) - 0.34375) * 2), 1);
+  opacity: calc(1 - var(--shortcut-fade));
+  transform: translateY(calc(var(--shortcut-fade) * -6px));
 }
 .shortcut-mail-result {
-  opacity: clamp(0, calc((var(--feature-progress) - 0.67) * 5), 1);
-  transform: translateY(clamp(0px, calc((0.87 - var(--feature-progress)) * 30px), 6px));
+  --shortcut-result: clamp(0, calc((var(--feature-progress) - 0.79375) * 8), 1);
+  opacity: var(--shortcut-result);
+  transform: translateY(calc((1 - var(--shortcut-result)) * 6px));
 }
 @media (prefers-reduced-motion: reduce), (max-height: 500px) {
   .shortcut-mail-example {
@@ -50,7 +52,7 @@
 .animated-variable::before {
   content:attr(data-placeholder);
   grid-area:1 / 1;
-  opacity:clamp(0, calc(1 - var(--variable-progress) * 3), 1);
+  opacity:calc(1 - var(--variable-progress));
   transform:translateY(calc(var(--variable-progress) * -8px));
   font-size:11px;
 }

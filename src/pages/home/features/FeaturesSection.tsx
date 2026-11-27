@@ -25,7 +25,7 @@ export default function FeaturesSection({ preview }: { preview: DemoPreview | nu
           인사말과 안내 문구를 템플릿으로 저장해 두세요. 메일을 보낼 때는 단축어로 불러와 받는 사람이나 일정처럼 달라지는 값만 채우면 됩니다.
         </p>
       </motion.div>
-      <FeatureCard className="feature-card feature-mint" smooth>
+      <FeatureCard className="feature-card feature-mint" trackClassName="shortcut-track" smooth>
         <span className="feature-index">단축어</span>
         <h3>
           긴 메일도,

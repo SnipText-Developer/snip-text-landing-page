@@ -1,7 +1,11 @@
 .feature-track {
   max-width: 45rem;
-  min-height: 140vh;
+  min-height: 160vh;
   margin-inline: auto;
+}
+.shortcut-track {
+  /* Add three copies of the original fade distance (20% of 60vh). */
+  min-height: 196vh;
 }
 .feature-track + .feature-track {
   margin-top: 20px;
