@@ -2,9 +2,10 @@ import "./FeatureCard.css";
 import { useRef, type ReactNode } from "react";
 import { motion, useReducedMotion, useScroll, useSpring, useTransform, type MotionStyle } from "framer-motion";
 
-export function FeatureCard({ children, className, smooth = false }: {
+export function FeatureCard({ children, className, trackClassName = "", smooth = false }: {
   children: ReactNode;
   className: string;
+  trackClassName?: string;
   smooth?: boolean;
 }) {
   const track = useRef<HTMLDivElement>(null);
@@ -27,10 +28,10 @@ export function FeatureCard({ children, className, smooth = false }: {
   } as MotionStyle;
 
   return (
-    <div ref={track} className="feature-track">
+    <div ref={track} className={`feature-track ${trackClassName}`}>
       <div className="feature-viewport">
         <motion.article className={className} style={style}>
-          {children}
+          <div className="feature-content">{children}</div>
         </motion.article>
       </div>
     </div>

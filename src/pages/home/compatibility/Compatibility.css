@@ -23,13 +23,6 @@
   align-items: center;
   gap: 7px;
 }
-.compatibility b {
-  font-size: 23px;
-  color: var(--accent);
-}
-.compatibility .naver-icon {
-  color: #03c75a;
-}
 @media (max-width: 900px) {
   .compatibility {
     gap: 22px;
@@ -46,8 +39,9 @@
     width: 100%;
     text-align: center;
   }
-  .compatibility b {
-    font-size: 19px;
+  .compatibility img {
+    width: 20px;
+    height: 20px;
   }
   .compatibility > div {
     gap: 5px;

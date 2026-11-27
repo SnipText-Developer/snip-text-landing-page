@@ -14,7 +14,7 @@ export default function FaqSection() {
           궁금한 게<br />
           있으신가요?
         </h2>
-        <span className="faq-star">✳</span>
+        <span className="faq-star">{"✳\uFE0E"}</span>
       </motion.div>
       <div className="faq-list">
         {[

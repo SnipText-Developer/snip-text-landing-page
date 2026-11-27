@@ -1,11 +1,30 @@
 import "./MailScrollPreview.css";
 import { LogoMark } from "pages/shared/Brand";
-import { useRef } from "react";
+import { useRef, type CSSProperties } from "react";
 import { easeInOut, motion, useScroll, useSpring, useTransform, type MotionValue } from "framer-motion";
 import { demoTemplates, fillDemoTemplate, quoteExample, sampleQuoteValues, shortenPreviewValue, type DemoPreview } from "./demoExamples";
 import useReveal from "../useReveal";
 
 const easing = { ease: easeInOut };
+
+function stretchFadeRanges(animationRange: number[]) {
+  // Alternate normal-distance and triple-distance segments between the boundaries.
+  let distance = 0;
+  const scrollRange = animationRange.map((boundary, index) => {
+    const previous = animationRange[index - 1] ?? 0;
+    distance += (boundary - previous) * (index % 2 === 0 ? 3 : 1);
+    return distance;
+  });
+  return {
+    animationRange,
+    scrollRange: scrollRange.map((boundary) => boundary / distance),
+    trackStyle: { "--demo-scroll-scale": distance } as CSSProperties,
+  };
+}
+
+// Overlapping fades share a segment so both retain the same transition timing.
+const variableTimeline = stretchFadeRanges([0, 0.29, 0.37, 0.83, 0.96, 1]);
+const quickTimeline = stretchFadeRanges([0, 0.29, 0.43, 1]);
 
 function PreviewVariable({ name, value, index, progress }: {
   name: string;
@@ -53,7 +72,9 @@ export default function MailScrollPreview({ preview }: { preview: DemoPreview | 
     target: demoRef,
     offset: ["start start", "end end"],
   });
-  const progress = useSpring(scrollYProgress, { stiffness: 180, damping: 28, mass: 0.32 });
+  const timeline = hasVariables ? variableTimeline : quickTimeline;
+  const animationProgress = useTransform(scrollYProgress, timeline.scrollRange, timeline.animationRange);
+  const progress = useSpring(animationProgress, { stiffness: 180, damping: 28, mass: 0.32 });
   const listOpacity = useTransform(progress, [0, 0.08, 0.29, 0.37], [0, 1, 1, 0], easing);
   const listY = useTransform(progress, [0, 0.08, 0.29, 0.37], [-4, 0, 0, -3], easing);
   const insertionRange = hasVariables ? [0.87, 0.96] : [0.32, 0.43];
@@ -67,7 +88,7 @@ export default function MailScrollPreview({ preview }: { preview: DemoPreview | 
   );
 
   return (
-    <div className={hasVariables ? "demo-scroll-track" : "demo-scroll-track demo-scroll-quick"} ref={demoRef}>
+    <div className={hasVariables ? "demo-scroll-track" : "demo-scroll-track demo-scroll-quick"} ref={demoRef} style={timeline.trackStyle}>
       <div className="demo-sticky-viewport">
         <motion.div
           {...reveal}

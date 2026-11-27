@@ -2,12 +2,12 @@
   grid-column: 1 / -1;
   text-align: center;
   position: relative;
-  height: 270vh;
+  height: calc(100vh + 255vh * var(--demo-scroll-scale, 1));
   margin-top: 62px;
   margin-bottom: 0.5rem;
 }
 .demo-scroll-quick {
-  height: 195vh;
+  height: calc(100vh + 142.5vh * var(--demo-scroll-scale, 1));
 }
 .demo-sticky-viewport {
   position: sticky;
@@ -261,6 +261,11 @@
     padding-right: 18px;
   }
 }
+@media (max-width: 700px) {
+  .demo-sticky-viewport {
+    padding-top: 70px;
+  }
+}
 @media (max-width: 600px) {
   .demo-scene {
     margin-top: 45px;
@@ -431,7 +436,7 @@
 .scroll-static-value {
   display: none;
 }
-@media (prefers-reduced-motion: reduce), (max-height: 740px) {
+@media (prefers-reduced-motion: reduce), (max-height: 500px) {
   .demo-scroll-track {
     height: auto;
   }

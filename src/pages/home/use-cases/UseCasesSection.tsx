@@ -26,7 +26,7 @@ export default function UseCasesSection() {
             color: "mint",
           },
           {
-            icon: "♡",
+            icon: "⇄",
             role: "CS 담당자",
             title: (
               <>
@@ -40,7 +40,7 @@ export default function UseCasesSection() {
             color: "lilac",
           },
           {
-            icon: "✳",
+            icon: "✳\uFE0E",
             role: "팀 일정 안내",
             title: (
               <>
@@ -51,7 +51,7 @@ export default function UseCasesSection() {
             ),
             text: "회의 안내 템플릿을 불러와 이번 회의의 날짜, 시간, 안건만 입력하세요.",
             tags: ["\\회의", "{{날짜}}"],
-            color: "peach",
+            color: "mint",
           },
         ].map((item) => (
           <motion.article {...reveal} className="use-card" key={item.role}>

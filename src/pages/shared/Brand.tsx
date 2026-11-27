@@ -5,7 +5,7 @@ export const Arrow = () => <span aria-hidden="true">↗</span>;
 export const LogoMark = ({ size = 32 }: { size?: number }) => (
   <img
     className="logo-mark"
-    src={`${process.env.PUBLIC_URL}/logo/logo-192.png`}
+    src={`${process.env.PUBLIC_URL}/logo-192.png`}
     width={size}
     height={size}
     alt=""
